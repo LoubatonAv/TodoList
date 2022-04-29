@@ -1,0 +1,14 @@
+audio {
+  width: 500px;
+  height: 100px;
+}
+audio::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-mute-button {
+  -webkit-appearance: media-mute-button;
+  display: -webkit-flex;
+  width: 16px;
+  height: 16px;
+  background-color: initial;
+  border: initial;
+  color: inherit;
+}
