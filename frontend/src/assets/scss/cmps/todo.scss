@@ -1,0 +1,36 @@
+.main-container {
+  padding: 50px;
+
+  .todo {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    gap: 10px;
+    background-color: rgb(235, 235, 235);
+    align-items: baseline;
+
+    button {
+      cursor: pointer;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    input[type='checkbox'] {
+      display: flex;
+      gap: 10px;
+      -webkit-transform: scale(1.65); /* Safari and Chrome */
+      transform: scale(1.65);
+      cursor: pointer;
+    }
+  }
+}
+
+.form {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: baseline;
+}

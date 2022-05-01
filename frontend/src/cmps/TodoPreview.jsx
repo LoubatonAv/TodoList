@@ -11,10 +11,12 @@ export const TodoPreview = ({ todo, onRemoveTodo }) => {
   };
 
   return (
-    <div>
-      <div>{todo.name}</div>
-      <button onClick={() => onRemoveTodo(todo.id)}>X</button>
-      <input type='checkbox' checked={todo.isDone} onChange={handleChange} value={todo.id}></input>
+    <div className='todo'>
+      <p>{todo.name}</p>
+      <div className='buttons'>
+        <button onClick={() => onRemoveTodo(todo.id)}>x</button>
+        <input type='checkbox' checked={todo.isDone} onChange={handleChange} value={todo.id}></input>
+      </div>
     </div>
   );
 };

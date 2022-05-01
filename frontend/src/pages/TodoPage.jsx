@@ -24,16 +24,18 @@ export const TodoPage = () => {
   };
 
   return (
-    <>
-      <form onSubmit={(e) => onSubmit(e)}>
-        <label>
-          <input type='text' name='name' onChange={(e) => setInput(e.target.value)} />
-        </label>
-        <button>Submit</button>
-      </form>
-      <div className='main-layout'>
-        <TodoList todos={todos} onRemoveTodo={onRemoveTodo} />
+    <div className='main-layout'>
+      <div className='main-container'>
+        <form className='form' onSubmit={(e) => onSubmit(e)}>
+          <label>
+            <input type='text' name='name' onChange={(e) => setInput(e.target.value)} />
+          </label>
+          <button>Submit</button>
+        </form>
+        <div>
+          <TodoList todos={todos} onRemoveTodo={onRemoveTodo} />
+        </div>
       </div>
-    </>
+    </div>
   );
 };

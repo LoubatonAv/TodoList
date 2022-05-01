@@ -1,9 +1,14 @@
+html {
+  background-color: rgb(233, 233, 233);
+}
+
 .main-layout {
   display: grid;
-  grid-template-columns: minmax(100px, 1fr) minmax(auto, 1200px) minmax(100px, 1fr);
+  grid-template-columns: minmax(110px, 1fr) minmax(auto, 500px) minmax(110px, 1fr);
 
   > * {
     grid-column: 2;
+    background-color: white;
   }
 
   > *.full {
