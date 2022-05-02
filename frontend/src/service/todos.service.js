@@ -1,45 +1,28 @@
 import { storageService } from './storage.service.js';
 import { utilService } from './util.service';
+import { httpService } from './httpService';
 
 const STORAGE_KEY = 'todoDB';
-
-export const peopleService = {
-  loadTodos,
+const BASE_URL = 'todo';
+export const todosService = {
   getById,
   addTodo,
   remove,
   save,
+  query,
 };
 
 function getById(personId) {
   return storageService.get(STORAGE_KEY, personId);
 }
 
-async function getTodos() {
-  const todos = [
-    {
-      name: 'EAT',
-    },
-    {
-      name: 'Sleep',
-    },
-    {
-      name: 'GYM',
-    },
-    {
-      name: 'Bake',
-    },
-    {
-      name: 'Lol',
-    },
-  ];
-
-  const todosWithId = todos.map((todo) => {
-    return { ...todo, id: utilService.makeId(), isDone: false };
-  });
-
-  _saveTodosToStorage(todosWithId);
-  return todosWithId;
+async function query(filterBy) {
+  try {
+    return httpService.get(BASE_URL, filterBy);
+  } catch (err) {
+    console.log('cant get todos from server', err);
+    throw err;
+  }
 }
 
 async function addTodo(todo) {
@@ -50,20 +33,12 @@ async function addTodo(todo) {
 }
 
 function remove(todoId) {
-  return storageService.removeFromStorage(STORAGE_KEY, todoId);
-}
-
-async function loadTodos(filterBy) {
+  // return storageService.removeFromStorage(STORAGE_KEY, todoId);
   try {
-    let todos = await _loadTodosFromStorage();
-
-    if (!todos) {
-      getTodos();
-    }
-
-    return todos;
+    return httpService.delete(`${BASE_URL}/${todoId}`);
   } catch (err) {
-    console.log('Cannot get people', err);
+    console.log('can not delete toy from server', err);
+    throw err;
   }
 }
 

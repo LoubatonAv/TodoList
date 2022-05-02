@@ -11,7 +11,7 @@ export function todoReducer(state = initialState, action) {
       newState = { ...state, todos: action.todos };
       break;
     case 'REMOVE_TODO':
-      newState = { ...state, todos: state.todos.filter((todo) => todo.id !== action.todoId) };
+      newState = { ...state, todos: state.todos.filter((todo) => todo._id !== action.todoId) };
       break;
     case 'ADD_TODO':
       newState = { ...state, todos: [...state.todos, action.todo] };
