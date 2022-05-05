@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateTodo } from '../cmps/store/todos.action.js';
+import { onSaveTodo } from '../cmps/store/todos.action.js';
 
 export const TodoPreview = ({ todo, onRemoveTodo }) => {
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
     todo.isDone = event.target.checked;
-    dispatch(updateTodo(todo));
+    dispatch(onSaveTodo(todo));
   };
 
   return (

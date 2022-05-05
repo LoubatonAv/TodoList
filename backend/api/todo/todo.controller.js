@@ -6,7 +6,7 @@ const logger = require('../../services/logger.service');
 async function getTodos(req, res) {
   try {
     const filterBy = req.query;
-    console.log('querying');
+    // console.log('querying');
     const Todos = await todoService.query(filterBy);
     res.json(Todos);
   } catch (err) {
@@ -32,7 +32,8 @@ async function getTodoById(req, res) {
 
 async function addTodo(req, res) {
   try {
-    const { todo } = req.body;
+    const todo = req.body;
+
     const addedTodo = await todoService.add(todo);
     res.json(addedTodo);
   } catch (err) {
@@ -45,11 +46,13 @@ async function addTodo(req, res) {
 
 async function updateTodo(req, res) {
   try {
-    const { todo } = req.body;
-    const { user } = req.session.user;
-    console.log('USER', user);
+    const todo = req.body;
+    console.log('todo:', todo);
+
+    // console.log('todo:', todo);
+
     const savedTodo = await todoService.update(todo);
-    console.log('todo to save', savedTodo);
+
     res.json(savedTodo);
   } catch (err) {
     logger.error('Failed to update todo', err);
@@ -62,7 +65,6 @@ async function updateTodo(req, res) {
 async function removeTodo(req, res) {
   try {
     const todoId = req.params.id;
-    console.log('todoId:', todoId);
 
     const removedId = todoService.remove(todoId);
     res.send(removedId);

@@ -6,7 +6,7 @@ export const TodoList = ({ todos, onRemoveTodo }) => {
     <div>
       <div>
         {todos?.map((todo) => (
-          <TodoPreview todo={todo} key={todo.id} onRemoveTodo={onRemoveTodo} />
+          <TodoPreview todo={todo} key={todo._id} onRemoveTodo={onRemoveTodo} />
         ))}
       </div>
     </div>

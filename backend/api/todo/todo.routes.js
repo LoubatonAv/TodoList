@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.get('/', log, getTodos);
 router.get('/:id', getTodoById);
-router.post('/', requireAuth, addTodo);
-router.put('/', /* requireAuth, requireAdmin, */ updateTodo);
+router.post('/', addTodo);
+router.put('/', updateTodo);
 // router.delete('/:id', requireAuth, requireAdmin, removeTodo);
 router.delete('/:id', removeTodo);
 

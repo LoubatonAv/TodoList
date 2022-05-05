@@ -18,11 +18,9 @@ export function todoReducer(state = initialState, action) {
 
       break;
     case 'UPDATE_TODO':
-      newState = {
+      return {
         ...state,
-        todos: state.todos.map((currTodo) => {
-          return currTodo.id === action.todo.id ? action.todo : currTodo;
-        }),
+        todos: state.todos.map((todo) => (todo._id === action.todo._id ? action.todo : todo)),
       };
       break;
     case 'SET_FILTER':

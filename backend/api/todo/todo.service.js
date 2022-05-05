@@ -9,7 +9,7 @@ async function query(filterBy = { word: '', type: '' }) {
 
     const todos = await collection.find(criteria).toArray();
 
-    console.log('query -> todos', todos);
+    // console.log('query -> todos', todos);
     return todos;
   } catch (err) {
     logger.error('Can not find todos', err);
@@ -49,29 +49,34 @@ async function getById(toyId) {
   }
 }
 
-async function add(toy) {
+async function add(todo) {
+  console.log('todo:', todo);
+
   try {
-    toy.createdAt = Date.now();
-    const collection = await dbService.getCollection('toy');
-    await collection.insertOne(toy);
-    return toy;
+    todo.createdAt = Date.now();
+    todo.isDone = false;
+    const collection = await dbService.getCollection('todo');
+    await collection.insertOne(todo);
+
+    return todo;
   } catch (err) {
-    logger.error('Can not add toy', err);
+    logger.error('Can not add todo', err);
     throw err;
   }
 }
 
-async function update(toy) {
+async function update(todo) {
   try {
-    const newToy = {
-      ...toy,
-      _id: ObjectId(toy._id),
+    const newTodo = {
+      ...todo,
+      _id: ObjectId(todo._id),
     };
-    const collection = await dbService.getCollection('toy');
-    await collection.updateOne({ _id: newToy._id }, { $set: newToy });
-    return toy;
+
+    const collection = await dbService.getCollection('todo');
+    await collection.updateOne({ _id: newTodo._id }, { $set: newTodo });
+    return todo;
   } catch (err) {
-    logger.error(`Can not update toy ${toy._id}`, err);
+    logger.error(`Can not update toy ${todo._id}`, err);
     throw err;
   }
 }

@@ -18,11 +18,34 @@ export function setFilterBy(filterBy) {
 }
 
 export function addTodo(todo) {
-  return (dispatch, getState) => {
-    todosService.addTodo(todo).then(() => {
-      const action = { type: 'ADD_TODO', todo };
+  return async (dispatch) => {
+    try {
+      const savedTodo = await todosService.addTodo(todo);
+      const action = {
+        type: 'ADD_TODO',
+        todo: savedTodo,
+      };
       dispatch(action);
-    });
+    } catch (err) {
+      console.log('Can not add todo', todo);
+    }
+  };
+}
+
+export function onSaveTodo(todo) {
+  return async (dispatch) => {
+    try {
+      const savedTodo = await todosService.saveTodo(todo);
+
+      const action = {
+        type: 'UPDATE_TODO',
+        todo: savedTodo,
+      };
+
+      dispatch(action);
+    } catch (err) {
+      console.log('cant save todo');
+    }
   };
 }
 
@@ -35,19 +58,24 @@ export function removeTodo(todoId) {
       });
       return todoId;
     } catch (err) {
-      console.log('cant remove toy', err);
+      console.log('cant remove todo', err);
     }
   };
 }
 
-export function updateTodo(todo) {
-  return (dispatch) => {
-    todosService
-      .save(todo)
-      .then((savedTodo) => {
-        const action = { type: 'UPDATE_TODO', todo: savedTodo };
-        dispatch(action);
-      })
-      .catch((err) => {});
-  };
-}
+// export function updateTodo(todo) {
+//   return async (dispatch) => {
+//     try {
+//       const savedTodo = await todosService.updateTodo(todo);
+//       console.log('todo from action:', todo);
+//       console.log('savedTodo:', savedTodo);
+
+//       dispatch({
+//         type: 'UPDATE_TODO',
+//         todo: savedTodo,
+//       });
+//     } catch (err) {
+//       console.log('Can not update todo', err);
+//     }
+//   };
+// }
