@@ -1,8 +1,7 @@
 import { todosService } from '../../service/todos.service';
 
-export function loadTodos() {
+export function loadTodos(filterBy) {
   return (dispatch, getState) => {
-    const { filterBy } = getState().todoModule;
     todosService.query(filterBy).then((todo) => {
       const action = { type: 'SET_TODOS', todos: todo };
       dispatch(action);
@@ -10,12 +9,12 @@ export function loadTodos() {
   };
 }
 
-export function setFilterBy(filterBy) {
-  return (dispatch) => {
-    const action = { type: 'SET_FILTER', filterBy };
-    dispatch(action);
-  };
-}
+// export function setFilterBy(filterBy) {
+//   return (dispatch) => {
+//     const action = { type: 'SET_FILTER', filterBy };
+//     dispatch(action);
+//   };
+// }
 
 export function addTodo(todo) {
   return async (dispatch) => {

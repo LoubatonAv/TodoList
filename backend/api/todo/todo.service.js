@@ -2,7 +2,7 @@ const dbService = require('../../services/db.service');
 const logger = require('../../services/logger.service');
 const ObjectId = require('mongodb').ObjectId;
 
-async function query(filterBy = { word: '', type: '' }) {
+async function query(filterBy = { status: '' }) {
   try {
     const criteria = _buildCriteria(filterBy);
     const collection = await dbService.getCollection('todo');
@@ -15,6 +15,23 @@ async function query(filterBy = { word: '', type: '' }) {
     logger.error('Can not find todos', err);
     throw err;
   }
+}
+
+function _buildCriteria(filterBy) {
+  const criteria = {};
+  const { word, labels } = filterBy;
+
+  if (word) {
+    const txtCriteria = { $regex: word, $options: 'i' };
+    criteria.name = txtCriteria;
+  }
+  if (labels) {
+    criteria.labels = { $all: labels };
+  }
+  if (filterBy.status) {
+    criteria.isDone = { $eq: filterBy.status === 'done' };
+  }
+  return criteria;
 }
 
 async function remove(todoId) {
@@ -110,21 +127,4 @@ function _createReviews() {
       txt: 'Played it with my entire family and loved every minute!!! wow!!!!!!!!!!!!!!!!!!',
     },
   ];
-}
-
-function _buildCriteria(filterBy) {
-  const criteria = {};
-  const { word, labels } = filterBy;
-
-  if (word) {
-    const txtCriteria = { $regex: word, $options: 'i' };
-    criteria.name = txtCriteria;
-  }
-  if (labels) {
-    criteria.labels = { $all: labels };
-  }
-  if (filterBy.type) {
-    criteria.inStock = { $eq: filterBy.type === 'instock' };
-  }
-  return criteria;
 }

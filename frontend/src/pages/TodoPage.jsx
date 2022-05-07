@@ -5,6 +5,9 @@ import { TodoList } from '../cmps/TodoList';
 
 export const TodoPage = () => {
   const [input, setInput] = useState('');
+  const [filterBy, setFiilterBy] = useState({
+    status: '',
+  });
 
   const todos = useSelector((state) => state?.todoModule?.todos);
   const dispatch = useDispatch();
@@ -23,8 +26,17 @@ export const TodoPage = () => {
     dispatch(loadTodos());
   };
 
+  useEffect(() => {
+    dispatch(loadTodos(filterBy));
+  }, [filterBy]);
+
   return (
     <div className='main-layout'>
+      <select name='type' onChange={(e) => setFiilterBy({ ...filterBy, status: e.target.value })}>
+        <option value=''>All</option>
+        <option value='done'>Done</option>
+        <option value='undone'>Undone</option>
+      </select>
       <div className='main-container'>
         <form className='form' onSubmit={(e) => onSubmit(e)}>
           <label>

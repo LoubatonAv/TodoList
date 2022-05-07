@@ -40,6 +40,8 @@ function getById(personId) {
 }
 
 async function query(filterBy) {
+  console.log('filterBy:', filterBy);
+
   try {
     return httpService.get(BASE_URL, filterBy);
   } catch (err) {
