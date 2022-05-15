@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { onSaveTodo } from '../cmps/store/todos.action.js';
+import { onSaveTodo } from '../store/todos.action.js';
 
 export const TodoPreview = ({ todo, onRemoveTodo }) => {
   const dispatch = useDispatch();

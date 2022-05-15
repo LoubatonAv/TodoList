@@ -2688,3 +2688,76 @@
 7.5.2022, 21:23:46 - INFO - Req!!!
 7.5.2022, 21:23:49 - INFO - Req!!!
 7.5.2022, 21:23:50 - INFO - Req!!!
+15.5.2022, 21:31:42 - INFO - Server is running on port: 3030
+15.5.2022, 21:42:12 - INFO - Req!!!
+15.5.2022, 21:42:12 - INFO - Req!!!
+15.5.2022, 21:42:17 - INFO - Req!!!
+15.5.2022, 21:42:17 - INFO - Req!!!
+15.5.2022, 21:42:18 - INFO - Req!!!
+15.5.2022, 21:42:20 - INFO - Req!!!
+15.5.2022, 21:42:20 - INFO - Req!!!
+15.5.2022, 21:42:22 - INFO - Req!!!
+15.5.2022, 21:42:23 - INFO - Req!!!
+15.5.2022, 21:42:26 - INFO - Req!!!
+15.5.2022, 21:42:28 - INFO - Req!!!
+15.5.2022, 21:42:28 - INFO - Req!!!
+15.5.2022, 21:42:30 - INFO - Req!!!
+15.5.2022, 21:42:31 - INFO - Req!!!
+15.5.2022, 21:42:34 - INFO - Req!!!
+15.5.2022, 21:42:36 - INFO - Req!!!
+15.5.2022, 21:42:37 - INFO - Req!!!
+15.5.2022, 21:42:37 - INFO - Req!!!
+15.5.2022, 21:42:40 - INFO - Req!!!
+15.5.2022, 21:42:40 - INFO - Req!!!
+15.5.2022, 21:59:13 - INFO - Req!!!
+15.5.2022, 21:59:13 - INFO - Req!!!
+15.5.2022, 21:59:15 - INFO - Req!!!
+15.5.2022, 21:59:16 - INFO - Req!!!
+15.5.2022, 21:59:18 - INFO - Req!!!
+15.5.2022, 21:59:21 - INFO - Req!!!
+15.5.2022, 21:59:23 - INFO - Req!!!
+15.5.2022, 21:59:24 - INFO - Req!!!
+15.5.2022, 21:59:25 - INFO - Req!!!
+15.5.2022, 21:59:26 - INFO - Req!!!
+15.5.2022, 21:59:30 - INFO - Req!!!
+15.5.2022, 21:59:31 - INFO - Req!!!
+15.5.2022, 21:59:32 - INFO - Req!!!
+15.5.2022, 21:59:34 - INFO - Req!!!
+15.5.2022, 21:59:38 - INFO - Req!!!
+15.5.2022, 22:09:53 - INFO - Req!!!
+15.5.2022, 22:09:53 - INFO - Req!!!
+15.5.2022, 22:17:51 - INFO - Req!!!
+15.5.2022, 22:17:51 - INFO - Req!!!
+15.5.2022, 22:17:55 - INFO - Req!!!
+15.5.2022, 22:17:55 - INFO - Req!!!
+15.5.2022, 22:18:27 - DEBUG - aluvton, aluvton, aluvton
+15.5.2022, 22:18:27 - DEBUG - auth.service - signup with username: aluvton, fullname: aluvton
+15.5.2022, 22:18:27 - DEBUG - auth.route - new account created: {"username":"aluvton","password":"$2b$10$DX6a/wJY97ZeQHcHJ/Qem.p7rih3.KrC8E6xuhNLaPb2bxajqEtv6","fullname":"aluvton","score":0,"_id":"62815203c639e904a4d08379"}
+15.5.2022, 22:18:27 - DEBUG - auth.service - login with username: aluvton
+15.5.2022, 22:26:58 - INFO - Server is running on port: 3030
+15.5.2022, 22:41:07 - INFO - Req!!!
+15.5.2022, 22:41:07 - INFO - Req!!!
+15.5.2022, 22:59:25 - INFO - Req!!!
+15.5.2022, 22:59:26 - INFO - Req!!!
+15.5.2022, 22:59:27 - INFO - Req!!!
+15.5.2022, 22:59:28 - INFO - Req!!!
+15.5.2022, 22:59:30 - INFO - Req!!!
+15.5.2022, 22:59:32 - INFO - Req!!!
+15.5.2022, 22:59:33 - INFO - Req!!!
+15.5.2022, 23:01:06 - DEBUG - auth.service - login with username: aluvton
+15.5.2022, 23:01:06 - ERROR - Failed to Login Invalid username or password
+15.5.2022, 23:01:06 - INFO - Req!!!
+15.5.2022, 23:01:06 - INFO - Req!!!
+15.5.2022, 23:01:22 - DEBUG - auth.service - login with username: aluvton
+15.5.2022, 23:01:22 - ERROR - Failed to Login Invalid username or password
+15.5.2022, 23:01:23 - INFO - Req!!!
+15.5.2022, 23:01:23 - INFO - Req!!!
+15.5.2022, 23:01:42 - DEBUG - auth.service - login with username: aluvton
+15.5.2022, 23:04:50 - DEBUG - auth.service - login with username: aluvton
+15.5.2022, 23:05:02 - DEBUG - auth.service - login with username: asd
+15.5.2022, 23:05:02 - ERROR - Failed to Login Invalid username or password
+15.5.2022, 23:05:02 - INFO - Req!!!
+15.5.2022, 23:05:02 - INFO - Req from: aluvton
+15.5.2022, 23:05:02 - INFO - Req!!!
+15.5.2022, 23:05:02 - INFO - Req from: aluvton
+15.5.2022, 23:05:11 - DEBUG - auth.service - login with username: aluvton

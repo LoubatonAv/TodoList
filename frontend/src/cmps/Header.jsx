@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 export const Header = () => {
   return (
     <div className='header'>
-      <Link to='/favorites'>
-        <div>Favorites</div>
+      <Link to='/signup'>
+        <div>Sign Up</div>
       </Link>
     </div>
   );

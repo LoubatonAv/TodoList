@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { loadTodos, removeTodo, addTodo } from '../cmps/store/todos.action.js';
+import { loadTodos, removeTodo, addTodo } from '../store/todos.action.js';
 import { TodoList } from '../cmps/TodoList';
 
 export const TodoPage = () => {

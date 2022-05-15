@@ -1,4 +1,4 @@
-import { todosService } from '../../service/todos.service';
+import { todosService } from '../service/todos.service';
 
 export function loadTodos(filterBy) {
   return (dispatch, getState) => {
