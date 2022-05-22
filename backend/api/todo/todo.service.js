@@ -66,16 +66,22 @@ async function getById(toyId) {
   }
 }
 
-async function add(todo) {
+async function add(todo, user) {
   console.log('todo:', todo);
 
   try {
-    todo.createdAt = Date.now();
-    todo.isDone = false;
-    const collection = await dbService.getCollection('todo');
-    await collection.insertOne(todo);
+    const updatedTodo = {
+      ...todo,
+      username: user,
+    };
+    console.log('updatedTodo:', updatedTodo);
 
-    return todo;
+    updatedTodo.createdAt = Date.now();
+    updatedTodo.isDone = false;
+    const collection = await dbService.getCollection('todo');
+    await collection.insertOne(updatedTodo);
+
+    return updatedTodo;
   } catch (err) {
     logger.error('Can not add todo', err);
     throw err;

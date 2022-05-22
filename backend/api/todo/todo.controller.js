@@ -33,8 +33,12 @@ async function getTodoById(req, res) {
 async function addTodo(req, res) {
   try {
     const todo = req.body;
+    const user = req.session.user;
+    console.log('user:', user);
 
-    const addedTodo = await todoService.add(todo);
+    const addedTodo = await todoService.add(todo, user);
+    console.log('addedTodo:', addedTodo);
+
     res.json(addedTodo);
   } catch (err) {
     logger.error('Failed to add todo', err);
